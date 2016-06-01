@@ -3,7 +3,7 @@ Quick tool to learn about using Zookeeper distributed storage
 from Python clients.
 
 ## Licence
-Licenced under MIT open source licence, see associated <a href='./LICENCE'>licence document</a> for more details 
+Licenced under MIT open source licence, see associated <a href='./LICENSE'>licence document</a> for more details 
 
 ## Parameters
 Command line tool parameters as follows
