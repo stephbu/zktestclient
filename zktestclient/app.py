@@ -19,9 +19,11 @@ class Queue:
 def run(zk_host):
 
     client = KazooClient(zk_host)
-    client.start()
+    client.start(timeout=15)
 
     zk_server_version = client.server_version()
+
+    client.add_listener()
     print 'Server Version: {0}'.format(zk_server_version)
 
     queue = Queue()
@@ -30,6 +32,7 @@ def run(zk_host):
     while queue.size() > 0:
         path = queue.dequeue()
         path_node = client.get(path)
+
         print '[{0}] {1}'.format(path_node[1].created, path)
         path_children = client.get_children(path)
 
